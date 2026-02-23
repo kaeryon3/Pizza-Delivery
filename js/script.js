@@ -18,6 +18,7 @@ const pizzaPrices = {
     'Orange Juice': 3,
     Beer: 5,
     Wine: 8,
+    Water: 2,
 };
 
 // =========================
