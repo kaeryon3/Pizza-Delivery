@@ -218,7 +218,8 @@ body {
 
 .hero {
     position: relative;
-    background: url('/images/pizza-hero.jpg') center/cover no-repeat;
+    background: url('https://kaeryon3.github.io/Pizza-Delivery/images/pizza-hero.jpg')
+        center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -332,7 +333,9 @@ body {
 }
 
 .drinks-subsection .menu-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .drinks-subsection .menu-card:hover {
