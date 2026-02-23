@@ -218,8 +218,7 @@ body {
 
 .hero {
     position: relative;
-    background: url('https://kaeryon3.github.io/Pizza-Delivery/images/pizza-hero.jpg')
-        center/cover no-repeat;
+    background: url('../images/pizza-hero.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
