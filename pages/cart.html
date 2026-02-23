@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Fresh pizza delivered to your door in 30 minutes. Order online from Margherita, Pepperoni, Hawaiian, BBQ Chicken, and more. Fast, tasty, and convenient!"
+        />
+        <meta
+            name="keywords"
+            content="pizza delivery, online pizza order, Margherita, Pepperoni, Hawaiian pizza, BBQ Chicken, vegetarian pizza, fresh pizza, fast delivery"
+        />
+
+        <title>Pizza Delivery</title>
+        <link rel="icon" href="../images/favicon.png" type="image/png" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../css/styles.css" />
+    </head>
+
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../images/logo.png" alt="logo" />
+                </a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item d-lg-none">
+                            <a class="nav-link" href="cart.html">Cart</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../index.html"
+                                >Home</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/menu.html"
+                                >Pizza</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/menu.html#drinks"
+                                >Drinks</a
+                            >
+                        </li>
+                    </ul>
+
+                    <a
+                        href="cart.html"
+                        class="cart-icon ms-3 d-none d-lg-inline-block"
+                    >
+                        <img src="../images/cart.png" alt="Cart" />
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <section id="cart" class="py-5">
+            <div class="container">
+                <div class="cart-wrapper">
+                    <h2>Your Cart</h2>
+
+                    <div id="cart-items"></div>
+
+                    <div
+                        class="d-flex justify-content-between align-items-center cart-total"
+                    >
+                        <span>Total:</span>
+                        <span>$<span id="cart-total">0</span></span>
+                    </div>
+
+                    <button class="btn btn-primary mt-4" id="checkout-btn">
+                        Proceed to Checkout
+                    </button>
+
+                    <div id="cart-confirmation" class="mt-4 text-center"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Модальное окно для корзины -->
+        <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Order Confirmation</h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                        ></button>
+                    </div>
+                    <div class="modal-body" id="cartModalBody"></div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            data-bs-dismiss="modal"
+                        >
+                            OK
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div
+            class="modal fade"
+            id="checkoutModal"
+            tabindex="-1"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Checkout</h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="checkout-form">
+                            <div class="mb-3">
+                                <label class="form-label">Full Name</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="cardName"
+                                    placeholder="John Doe"
+                                    required
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Address</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="cardAddress"
+                                    placeholder="123 Pizza Street, Food City"
+                                    required
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Card Number</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="cardNumber"
+                                    minlength="16"
+                                    maxlength="16"
+                                    placeholder="1234567812345678"
+                                    required
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">CVV</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="cardCVV"
+                                    minlength="3"
+                                    maxlength="3"
+                                    placeholder="123"
+                                    required
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <label for="cardExpiry" class="form-label"
+                                    >Expiration Date</label
+                                >
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="cardExpiry"
+                                    placeholder="MM/YY"
+                                    maxlength="5"
+                                    required
+                                />
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">
+                                Pay $<span id="checkout-total"></span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="site-footer bg-dark text-light py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-6 text-start mb-2 mb-md-0">
+                        <p class="mb-1">
+                            &copy; 2026 Fresh Pizza. All rights reserved.
+                        </p>
+                        <p class="mb-0">
+                            <a
+                                href="../pages/policy.html"
+                                class="text-light text-decoration-underline"
+                                >Privacy Policy</a
+                            >
+                        </p>
+                    </div>
+
+                    <div class="col-6 text-end">
+                        <p class="mb-1">
+                            Need help? Call us: 📞 +1 (555) 123-4567
+                        </p>
+                        <p class="mb-0">Or email: ✉️ contact@freshpizza.com</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../js/script.js"></script>
+    </body>
+</html>

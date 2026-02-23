@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Fresh pizza delivered to your door in 30 minutes. Order online from Margherita, Pepperoni, Hawaiian, BBQ Chicken, and more. Fast, tasty, and convenient!"
+        />
+        <meta
+            name="keywords"
+            content="pizza delivery, online pizza order, Margherita, Pepperoni, Hawaiian pizza, BBQ Chicken, vegetarian pizza, fresh pizza, fast delivery"
+        />
+
+        <title>Pizza Delivery</title>
+        <link rel="icon" href="../images/favicon.png" type="image/png" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../css/styles.css" />
+    </head>
+
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../images/logo.png" alt="logo" />
+                </a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item d-lg-none">
+                            <a class="nav-link" href="cart.html">Cart</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../index.html"
+                                >Home</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/menu.html"
+                                >Pizza</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#drinks">Drinks</a>
+                        </li>
+                    </ul>
+
+                    <a
+                        href="cart.html"
+                        class="cart-icon ms-3 d-none d-lg-inline-block"
+                    >
+                        <img src="../images/cart.png" alt="Cart" />
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Menu -->
+        <section id="menu" class="py-5">
+            <div class="container">
+                <h2 class="mb-4 text-center our-menu">Pizza</h2>
+                <div class="row g-4">
+                    <!-- Margherita -->
+                    <div class="col-md-4">
+                        <div class="card menu-card">
+                            <img
+                                src="../images/margherita.jpg"
+                                class="card-img-top"
+                                alt="Margherita"
+                            />
+                            <div class="card-body">
+                                <h5 class="card-title">Margherita</h5>
+                                <p class="card-text">
+                                    Classic pizza with tomato sauce and cheese.
+                                </p>
+                                <p class="fw-bold">12 $</p>
+                                <button class="btn btn-primary order-btn">
+                                    Add to cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pepperoni -->
+                    <div class="col-md-4">
+                        <div class="card menu-card">
+                            <img
+                                src="../images/pepperoni.jpg"
+                                class="card-img-top"
+                                alt="Pepperoni"
+                            />
+                            <div class="card-body">
+                                <h5 class="card-title">Pepperoni</h5>
+                                <p class="card-text">
+                                    Spicy pizza with pepperoni and cheese.
+                                </p>
+                                <p class="fw-bold">14 $</p>
+                                <button class="btn btn-primary order-btn">
+                                    Add to cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vegetarian -->
+                    <div class="col-md-4">
+                        <div class="card menu-card">
+                            <img
+                                src="../images/veggie.jpg"
+                                class="card-img-top"
+                                alt="Vegetarian"
+                            />
+                            <div class="card-body">
+                                <h5 class="card-title">Vegetarian</h5>
+                                <p class="card-text">
+                                    Vegetable pizza with tomato sauce and
+                                    cheese.
+                                </p>
+                                <p class="fw-bold">13 $</p>
+                                <button class="btn btn-primary order-btn">
+                                    Add to cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BBQ Chicken -->
+                    <div class="col-md-4">
+                        <div class="card menu-card">
+                            <img
+                                src="../images/bbq-chicken.jpg"
+                                class="card-img-top"
+                                alt="BBQ Chicken"
+                            />
+                            <div class="card-body">
+                                <h5 class="card-title">BBQ Chicken</h5>
+                                <p class="card-text">
+                                    Grilled chicken with BBQ sauce and cheese.
+                                </p>
+                                <p class="fw-bold">15 $</p>
+                                <button class="btn btn-primary order-btn">
+                                    Add to cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hawaiian -->
+                    <div class="col-md-4">
+                        <div class="card menu-card">
+                            <img
+                                src="../images/hawaiian.jpg"
+                                class="card-img-top"
+                                alt="Hawaiian"
+                            />
+                            <div class="card-body">
+                                <h5 class="card-title">Hawaiian</h5>
+                                <p class="card-text">
+                                    Ham, pineapple, and cheese pizza.
+                                </p>
+                                <p class="fw-bold">14 $</p>
+                                <button class="btn btn-primary order-btn">
+                                    Add to cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Four Cheese -->
+                    <div class="col-md-4">
+                        <div class="card menu-card">
+                            <img
+                                src="../images/four-cheese.jpg"
+                                class="card-img-top"
+                                alt="Four Cheese"
+                            />
+                            <div class="card-body">
+                                <h5 class="card-title">Four Cheese</h5>
+                                <p class="card-text">
+                                    Mozzarella, cheddar, parmesan, and blue
+                                    cheese.
+                                </p>
+                                <p class="fw-bold">16 $</p>
+                                <button class="btn btn-primary order-btn">
+                                    Add to cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Drinks Section -->
+        <section id="drinks" class="py-5">
+            <div class="container">
+                <h2 class="mb-4 text-center our-menu">Drinks</h2>
+
+                <!-- Non-alcoholic -->
+                <div class="drinks-subsection mb-5">
+                    <h4 class="mb-3">Non-Alcoholic</h4>
+                    <div class="row g-4">
+                        <div class="col-md-3">
+                            <div class="card menu-card">
+                                <img
+                                    src="../images/coke.jpg"
+                                    class="card-img-top"
+                                    alt="Coke"
+                                />
+                                <div class="card-body">
+                                    <h5 class="card-title">Coke</h5>
+                                    <p class="fw-bold">2 $</p>
+                                    <button class="btn btn-primary order-btn">
+                                        Add to cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card menu-card">
+                                <img
+                                    src="../images/juice.jpg"
+                                    class="card-img-top"
+                                    alt="Juice"
+                                />
+                                <div class="card-body">
+                                    <h5 class="card-title">Orange Juice</h5>
+                                    <p class="fw-bold">3 $</p>
+                                    <button class="btn btn-primary order-btn">
+                                        Add to cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card menu-card">
+                                <img
+                                    src="../images/water.jpg"
+                                    class="card-img-top"
+                                    alt="Juice"
+                                />
+                                <div class="card-body">
+                                    <h5 class="card-title">Water</h5>
+                                    <p class="fw-bold">2 $</p>
+                                    <button class="btn btn-primary order-btn">
+                                        Add to cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alcoholic -->
+                <div class="drinks-subsection">
+                    <h4 class="mb-3">Alcoholic</h4>
+                    <div class="row g-4">
+                        <div class="col-md-3">
+                            <div class="card menu-card">
+                                <img
+                                    src="../images/beer.jpg"
+                                    class="card-img-top"
+                                    alt="Beer"
+                                />
+                                <div class="card-body">
+                                    <h5 class="card-title">Beer</h5>
+                                    <p class="fw-bold">5 $</p>
+                                    <button class="btn btn-primary order-btn">
+                                        Add to cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card menu-card">
+                                <img
+                                    src="../images/wine.jpg"
+                                    class="card-img-top"
+                                    alt="Wine"
+                                />
+                                <div class="card-body">
+                                    <h5 class="card-title">Wine</h5>
+                                    <p class="fw-bold">8 $</p>
+                                    <button class="btn btn-primary order-btn">
+                                        Add to cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="site-footer bg-dark text-light py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-6 text-start mb-2 mb-md-0">
+                        <p class="mb-1">
+                            &copy; 2026 Fresh Pizza. All rights reserved.
+                        </p>
+                        <p class="mb-0">
+                            <a
+                                href="../pages/policy.html"
+                                class="text-light text-decoration-underline"
+                                >Privacy Policy</a
+                            >
+                        </p>
+                    </div>
+
+                    <div class="col-6 text-end">
+                        <p class="mb-1">
+                            <a href="menu.html#menu" class="text-light"
+                                >Pizza</a
+                            >
+                            |
+                            <a href="menu.html#drinks" class="text-light"
+                                >Drinks</a
+                            >
+                        </p>
+                        <p class="mb-0">
+                            <a href="cart.html" class="text-light">View Cart</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../js/script.js"></script>
+    </body>
+</html>
