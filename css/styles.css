@@ -1,4 +1,4 @@
-/* VARIABLES */
+/* Variables */
 
 :root {
     --color-primary: #ff4500;
@@ -8,7 +8,7 @@
     --color-background-light: #fff5f0;
 }
 
-/* TAGS */
+/* Tags */
 
 body {
     display: flex;
@@ -17,11 +17,7 @@ body {
     margin: 0;
 }
 
-#cart {
-    background-color: transparent;
-}
-
-/* NAVBAR */
+/* Navbar */
 
 .navbar {
     background-color: rgba(44, 44, 44, 0.95);
@@ -34,10 +30,6 @@ body {
     transition:
         background-color 0.3s ease,
         box-shadow 0.3s ease;
-}
-
-.navbar-dark {
-    --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
 .navbar .nav-link {
@@ -93,7 +85,7 @@ body {
     }
 }
 
-/* CART ICON */
+/* Cart icon */
 
 .cart-icon {
     position: relative;
@@ -123,21 +115,14 @@ body {
     border-radius: 50%;
 }
 
-.navbar .nav-link {
-    transition: color 0.3s;
-}
-
-.navbar .nav-link:hover {
-    color: var(--color-primary);
-}
-
-/* CART PAGE */
+/* Cart page */
 
 #cart {
     flex: 1 0 auto;
     background-color: var(--color-background-light);
     padding-top: 40px;
     padding-bottom: 40px;
+    background-color: transparent;
 }
 
 #cart h2 {
@@ -214,7 +199,7 @@ body {
     border-radius: 8px;
 }
 
-/* HERO */
+/* Hero */
 
 .hero {
     position: relative;
@@ -249,6 +234,13 @@ body {
     margin-top: 20px;
     padding: 12px 30px;
     font-size: 1.2rem;
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.hero-btn:hover {
+    background-color: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
 }
 
 @keyframes fadeInUp {
@@ -267,17 +259,13 @@ body {
     color: var(--color-light);
 }
 
-.hero-btn {
-    background-color: var(--color-primary);
-    border-color: var(--color-primary);
-}
+/* Cards, Menu */
 
-.hero-btn:hover {
-    background-color: var(--color-primary-hover);
-    border-color: var(--color-primary-hover);
+.our-menu {
+    font-weight: 800;
+    font-size: 3em;
+    padding-bottom: 1em;
 }
-
-/* MENU & CARDS */
 
 .menu-card {
     transition:
@@ -308,12 +296,7 @@ body {
     border-color: var(--color-primary-hover);
 }
 
-.menu-card img {
-    height: 200px;
-    object-fit: cover;
-}
-
-/* DRINKS */
+/* Drinks */
 
 #drinks {
     background-color: var(--color-background-light);
@@ -342,40 +325,7 @@ body {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* ORDER */
-
-.order-form {
-    max-width: 500px;
-    margin: auto;
-}
-
-.our-menu {
-    font-weight: 800;
-    font-size: 3em;
-    padding-bottom: 1em;
-}
-
-.order-section {
-    background-color: var(--color-dark);
-    color: var(--color-light);
-}
-
-.order-section .form-label {
-    color: #f8f9fa;
-}
-
-.order-section .form-control {
-    background-color: #444;
-    color: var(--color-light);
-    border: 1px solid #666;
-}
-
-.order-section .form-control:focus {
-    border-color: var(--color-primary);
-    box-shadow: none;
-}
-
-/* ORDER MONDAL */
+/* Modal */
 
 #orderModal .modal-text {
     text-align: center;
@@ -394,7 +344,7 @@ body {
     display: block;
 }
 
-/* FOOTER */
+/* Footer */
 
 .site-footer {
     flex-shrink: 0;

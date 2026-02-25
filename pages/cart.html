@@ -26,6 +26,7 @@
 
     <body>
         <!-- Navbar -->
+
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/Pizza-Delivery/index.html">
@@ -48,7 +49,9 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="/Pizza-Delivery/index.html"
+                            <a
+                                class="nav-link active"
+                                href="/Pizza-Delivery/index.html"
                                 >Home</a
                             >
                         </li>
@@ -67,7 +70,10 @@
                             >
                         </li>
                         <li class="nav-item d-lg-none">
-                            <a href="/Pizza-Delivery/pages/cart.html" class="cart-icon my-2">
+                            <a
+                                href="/Pizza-Delivery/pages/cart.html"
+                                class="cart-icon my-2"
+                            >
                                 <img src="../images/cart.png" alt="Cart" />
                                 <span class="cart-count">0</span>
                             </a>
@@ -84,6 +90,8 @@
                 </div>
             </div>
         </nav>
+
+        <!-- Items -->
 
         <section id="cart" class="py-5">
             <div class="container">
@@ -108,33 +116,8 @@
             </div>
         </section>
 
-        <!-- Модальное окно для корзины -->
-        <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Order Confirmation</h5>
-                        <button
-                            type="button"
-                            class="btn-close"
-                            data-bs-dismiss="modal"
-                        ></button>
-                    </div>
-                    <div class="modal-body" id="cartModalBody"></div>
-                    <div class="modal-footer">
-                        <button
-                            type="button"
-                            class="btn btn-primary"
-                            data-bs-dismiss="modal"
-                        >
-                            OK
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- Modal -->
+
         <div
             class="modal fade"
             id="checkoutModal"
@@ -218,6 +201,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- Footer -->
 
         <footer class="site-footer bg-dark text-light py-4">
             <div class="container">

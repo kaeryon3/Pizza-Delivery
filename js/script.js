@@ -1,12 +1,7 @@
-// =========================
-// Detect current page
-// =========================
+// Constants
+
 const isMenuPage = document.querySelector('.menu-card');
 const isCartPage = document.getElementById('cart-items');
-
-// =========================
-// Shared data
-// =========================
 const pizzaPrices = {
     Margherita: 12,
     Pepperoni: 14,
@@ -21,9 +16,8 @@ const pizzaPrices = {
     Water: 2,
 };
 
-// =========================
-// Utility functions
-// =========================
+// Functions
+
 function getEstimatedTime() {
     return Math.floor(Math.random() * 16) + 15;
 }
@@ -42,9 +36,7 @@ function updateCartCount() {
     counters.forEach((el) => (el.textContent = cart.length));
 }
 
-// =========================
-// MENU PAGE LOGIC
-// =========================
+// Menu logic
 if (isMenuPage) {
     const orderButtons = document.querySelectorAll('.order-btn');
 
@@ -74,9 +66,8 @@ if (isMenuPage) {
     updateCartCount();
 }
 
-// =========================
-// CART PAGE LOGIC
-// =========================
+// Cart logic
+
 if (isCartPage) {
     const cartItemsContainer = document.getElementById('cart-items');
     const totalElement = document.getElementById('cart-total');
@@ -116,9 +107,8 @@ if (isCartPage) {
         }
     });
 
-    // =========================
-    // MASK FOR EXPIRATION DATE
-    // =========================
+    // Mask for expiration date
+
     const expiryInput = document.getElementById('cardExpiry');
     if (expiryInput) {
         expiryInput.addEventListener('input', (e) => {
@@ -130,9 +120,8 @@ if (isCartPage) {
         });
     }
 
-    // =========================
     // Checkout modal logic
-    // =========================
+
     checkoutBtn.addEventListener('click', () => {
         if (cart.length === 0) {
             checkoutBtn.classList.add('btn-danger');
@@ -150,47 +139,51 @@ if (isCartPage) {
 
         const checkoutTotal = document.getElementById('checkout-total');
         if (checkoutTotal) checkoutTotal.textContent = total;
-        const checkoutModal = new bootstrap.Modal(document.getElementById('checkoutModal'));
+        const checkoutModal = new bootstrap.Modal(
+            document.getElementById('checkoutModal'),
+        );
         checkoutModal.show();
     });
 
-    document.getElementById('checkout-form')?.addEventListener('submit', function (e) {
-    e.preventDefault();
+    document
+        .getElementById('checkout-form')
+        ?.addEventListener('submit', function (e) {
+            e.preventDefault();
 
-    const name = document.getElementById('cardName').value.trim();
-    const address = document.getElementById('cardAddress').value.trim();
-    const number = document.getElementById('cardNumber').value.trim();
-    const cvv = document.getElementById('cardCVV').value.trim();
-    const expiry = document.getElementById('cardExpiry').value.trim();
+            const name = document.getElementById('cardName').value.trim();
+            const address = document.getElementById('cardAddress').value.trim();
+            const number = document.getElementById('cardNumber').value.trim();
+            const cvv = document.getElementById('cardCVV').value.trim();
+            const expiry = document.getElementById('cardExpiry').value.trim();
 
-    if (!name || !address) {
-        alert('Please enter your name and address.');
-        return;
-    }
+            if (!name || !address) {
+                alert('Please enter your name and address.');
+                return;
+            }
 
-    if (!/^\d{16}$/.test(number)) {
-        alert('Card number must be 16 digits.');
-        return;
-    }
+            if (!/^\d{16}$/.test(number)) {
+                alert('Card number must be 16 digits.');
+                return;
+            }
 
-    if (!/^\d{3}$/.test(cvv)) {
-        alert('CVV must be 3 digits.');
-        return;
-    }
+            if (!/^\d{3}$/.test(cvv)) {
+                alert('CVV must be 3 digits.');
+                return;
+            }
 
-    if (!/^(0[1-9]|1[0-2])\/\d{2}$/.test(expiry)) {
-        alert('Expiration date must be in MM/YY format.');
-        return;
-    }
+            if (!/^(0[1-9]|1[0-2])\/\d{2}$/.test(expiry)) {
+                alert('Expiration date must be in MM/YY format.');
+                return;
+            }
 
-    const estimatedTime = getEstimatedTime();
+            const estimatedTime = getEstimatedTime();
 
-    const checkoutModal = bootstrap.Modal.getInstance(
-        document.getElementById('checkoutModal')
-    );
-    checkoutModal.hide();
+            const checkoutModal = bootstrap.Modal.getInstance(
+                document.getElementById('checkoutModal'),
+            );
+            checkoutModal.hide();
 
-    document.getElementById('cart-confirmation').innerHTML = `
+            document.getElementById('cart-confirmation').innerHTML = `
         <h4>Thank you for your order!</h4>
         <p>Name: <strong>${name}</strong></p>
         <p>Address: <strong>${address}</strong></p>
@@ -199,10 +192,10 @@ if (isCartPage) {
         <p>Estimated delivery time: <strong>${estimatedTime} minutes</strong></p>
     `;
 
-    localStorage.removeItem('cart');
-    cart = [];
-    renderCart();
-});
+            localStorage.removeItem('cart');
+            cart = [];
+            renderCart();
+        });
 
     renderCart();
 }
